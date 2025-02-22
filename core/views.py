@@ -7,7 +7,6 @@ from .forms import VisitForm
 from django.views.generic import ListView
 from django.shortcuts import redirect
 from django.db.models import Q
-from .models import Visit, Master
 
 MENU = [
     {'title': 'Главная', 'url': '/', 'active': True},
@@ -53,10 +52,7 @@ class IndexView(CreateView):
         context['services'] = Service.objects.all()
         return context
 
-from django.views.generic import ListView
-from django.shortcuts import redirect
-from django.db.models import Q
-from .models import Visit, Master
+
 
 
 class VisitListView(ListView):
