@@ -98,3 +98,7 @@ class Review(models.Model):
     rating = models.IntegerField(choices=RAITING_CHOICES, verbose_name='Рейтинг')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     status = models.IntegerField(choices=STATUS_CHOICES, default=1, verbose_name='Статус')
+    
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
