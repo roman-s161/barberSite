@@ -18,10 +18,23 @@ def review_post_save(sender, instance, created, **kwargs):
         if check_review(review_text):
             # Если прошли проверку, меняем status на  2
             review.status = 2
+            # Формируем ТГ сообщение
+            message = f"""
+*Новый отзыв* 
+
+*Имя:* {review.name} 
+*Отзыв:* {review.text or 'не указан'}
+*Дата создания:* {review.created_at}
+*Ссылка на админ-панель:* http://127.0.0.1:8000/admin/core/review/{review.id}/change/
+-------------------------------------------------------------
+"""
+            # Отправляем ТГ сообщение
+            asyncio.run(send_telegram_message(TELEGRAM_BOT_TOKEN, YOUR_PERSONAL_CHAT_ID, message))
         else:
             # Если не прошли проверку, меняем status на  3
             review.status = 3
         review.save()
+
 
 @receiver(m2m_changed, sender=Visit.services.through)
 def send_telegram_notification(sender, instance, action, **kwargs):
