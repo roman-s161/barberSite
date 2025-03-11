@@ -6,3 +6,12 @@
 db.sqlite3
 media/
 staticfiles/
+dump.json
+loaddata.py
+auth.permission.json
+auth.user.json
+contenttypes.contenttype.json
+core.master.json
+core.review.json
+core.service.json
+core.visit.json
