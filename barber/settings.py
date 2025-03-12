@@ -32,18 +32,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
-    "213.171.6.117",
-    "roman-s161-barbersite-e499.twc1.net",
+    "213.171.3.61",
+    "roman-s161-barbersite-a842.twc1.net",
 ]
 
 # CSRF настройки для безопасной отправки форм
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1",
     "https://127.0.0.1",
-    "http://213.171.6.117",
-    "https://213.171.6.117",
-    "http://roman-s161-barbersite-e499.twc1.net",
-    "https://roman-s161-barbersite-e499.twc1.net",
+    "http://213.171.3.61",
+    "https://213.171.3.61",
+    "http://roman-s161-barbersite-a842.twc1.net",
+    "https://roman-s161-barbersite-a842.twc1.net",
 ]
 
 
