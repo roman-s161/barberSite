@@ -1,3 +1,9 @@
+import os
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'barber.settings')
+django.setup()
+
 from django.core.management import call_command
 import json
 
